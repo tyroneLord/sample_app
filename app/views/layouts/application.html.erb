@@ -5,11 +5,18 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  	<script src="http://html5shim.gogglecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
 <!-- I AM ON VIDEO 4 58:18 MINS IN -->
-<%= yield %>
-<%= params %>
+<%= render 'layouts/header' %>
+<div class="container">
+	<%= yield %>
+	<%= params %>
+	<%= render 'layouts/footer' %>
+</div>
 
 </body>
 </html>
