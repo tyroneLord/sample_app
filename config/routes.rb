@@ -6,6 +6,8 @@ SampleApp::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/sign_up', to: 'users#new'
 
+  resources :users
+
   # THESE ARE THE OLD ROUTES
     # get "static_pages/home"
     # get "static_pages/help"
