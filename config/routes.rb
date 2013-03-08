@@ -1,12 +1,15 @@
 SampleApp::Application.routes.draw do
 
   root :to => 'static_pages#home'
-  match '/help', to: 'static_pages#help'
-  match '/about', to: 'static_pages#about'
-  match '/contact', to: 'static_pages#contact'
-  match '/sign_up', to: 'users#new'
+  match '/help',     to: 'static_pages#help'
+  match '/about',    to: 'static_pages#about'
+  match '/contact',  to: 'static_pages#contact'
+  match '/sign_up',  to: 'users#new'
+  match '/sign_in',  to: 'sessions#new'
+  match '/sign_out', to: 'sessions#destroy'
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   # THESE ARE THE OLD ROUTES
     # get "static_pages/home"
