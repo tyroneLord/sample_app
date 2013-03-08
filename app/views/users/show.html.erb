@@ -2,7 +2,8 @@
 	<aside class="span4">
 		<section>
 			<h1>
-				<%= gravatar_for @user %>
+				<!-- the size is passed in from user helper -->
+				<%= gravatar_for @user, size: 200 %>
 				<%= @user.name %>
 			</h1>
 		</section>
