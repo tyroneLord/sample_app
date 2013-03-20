@@ -6,7 +6,20 @@
 					<ul class="nav pull-right">
 						<li> <%= link_to "Home",    "/" %></li>
 						<li> <%= link_to "Help",    help_path %></li>
-						<li> <%= link_to "Sign In",  new_session_path %></li>
+						<% if signed_in? %>
+							<li><%= link_to "Users", "#" %></li>
+							<li id "fat-menu" class="dropdown">
+								<a href="#" class="dropdown-toggle" data_toggle="dropdown">
+									Account <b class="caret"></b>
+								</a>
+								<ul class="dropdown">
+									<li></li>
+								</ul>
+							</li>
+							<li> <%= link_to "Sign Out" ,  sign_out_path %> </li>
+						<% else %>
+							<li> <%= link_to "Sign In",  new_session_path %> </li>
+						<% end %>
 					</ul>
 				</nav>
 			</div>
